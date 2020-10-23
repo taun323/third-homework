@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="style.css">
+<head>
+  <title>Tables</title>
+  <script>
+    function add_items() {
+      var table = document.getElementById("bodytable");
+      var name = document.getElementById("name").value;
+      var contract = document.getElementById("contract").value;
+      var date = document.getElementById("date").value;
+      var row = table.insertRow();
+      row.innerHTML = `
+        <td>${name}</td>
+        <td>${contract}</td>
+        <td>${date}</td>`;
+      table.appendChild(row)
+      document.getElementById("cool_form").reset()
+    }
+  </script>
+</head>
+<body>
+  <div class="column side">
+    <p> </p>
+  </div>
+  <div class="column middle">
+    <br>
+    <h1>Clients' contrats</h1>
+    <br>
+    <table id="cool_table">
+      <thead>
+          <tr>
+              <th>Client</th>
+              <th>Type of contract</th>
+              <th>Sign date</th>
+          </tr>
+      </thead>
+      <tbody id="bodytable">
+          <tr>
+              <td>Ana Toriello</td>
+              <td>Leasing</td>
+              <td>October 7, 2020</td>
+          </tr>
+          <tr>
+              <td>Jose Rodriguez</td>
+              <td>Sale</td>
+              <td>October 7, 2020</td>
+          </tr>
+          <tr>
+              <td id="special">Alejandro Cordova</td>
+              <td>Loan</td>
+              <td>October 10, 2020</td>
+          </tr>
+      </tbody>
+    </table>
+  <br>
+  <br>
+  <form id="cool_form">
+    <label for="name">Client's name:</label><br>
+    <input type="text" id="name" name="name"><br><br>
+    <label for="contract">Type of contract:</label><br>
+    <input type="text" id="contract" name="contract"><br><br>
+    <label for="date">Sign date:</label><br>
+    <input type="text" id="date" name="date"><br>
+    <br>
+    <input type="button" value="Submit" onclick="add_items()">
+  </form>  
+  <div class="column side">
+   <p> </p>
+  </div>
+</body>
+</html>
